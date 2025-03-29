@@ -1,4 +1,4 @@
-# hydra-automatizado
+# Hydra Automatizado
 
 ### S.O usado
 + Kali Linux

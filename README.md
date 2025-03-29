@@ -6,8 +6,6 @@
 ### Ferramenta
 + Hydra
 
-<h1>Criando o Phishing no Kali Linux</h1>
-
 > ### Iniciando o Hydra Automatizado: bash hydra.sh
 
 ### 1 - Só irá funcionar caso o Hydra esteja instalado na Máquina

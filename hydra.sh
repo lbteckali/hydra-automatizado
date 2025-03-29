@@ -72,14 +72,13 @@ then
 read -e -p "Informe o IP do Alvo: " var_ip
 echo "VOCÊ ESCOLHEU A OPÇÃO MYSQL"
 hydra $var_ip $var_mysql -l $var_nome -P $var_arquivo 
-else
 
-#elif [ "$var_protocolo" -eq 7 ]
-#then
-#read -e -p "Informe o IP do Alvo: " var_ip
-#echo "VOCÊ ESCOLHEU A OPÇÃO HTTP-GET"
-#hydra $var_ip $var_httpget -l $var_nome -P $var_arquivo 
-#else
+elif [ "$var_protocolo" -eq 7 ]
+then
+read -e -p "Informe o IP do Alvo: " var_ip
+echo "VOCÊ ESCOLHEU A OPÇÃO HTTP-GET"
+hydra $var_ip $var_httpget -l $var_nome -P $var_arquivo 
+else
 echo "Você não selecionou nehuma das opções validas!"
 fi
 

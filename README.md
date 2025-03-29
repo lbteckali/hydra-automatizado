@@ -13,7 +13,7 @@
 ### 2 - Instalar o Hydra em distros baseadas em Debian (Ubuntu, Linux Mint, Kali Linux, Pop OS, Zorin OS etc...)
 + sudo apt install hydra
 
-### 2 - Instalar o Hydra no Fedora
+### 3 - Instalar o Hydra no Fedora
 + sudo dnf install hydra
 
 ### Prontinho!!! Já pode usar o seu script para Brute Force com o Hydra
